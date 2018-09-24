@@ -39,3 +39,32 @@ else:
         print('测试失败!')
     except TypeError:
         print('测试成功!')
+def trim(s):
+    s = str(s)
+    p = 0
+    while p == 0:
+        if s[:1] == ' ':
+            s = str(s[1:])
+        else:
+            break
+    while p == 0:
+        if s[-1:] == ' ':
+            s = str(s[:-1])
+        else:
+            break
+    return s
+print(trim('  sahh  dffj  '))
+if trim('hello  ') != 'hello':
+    print('测试失败!')
+elif trim('  hello') != 'hello':
+    print('测试失败!')
+elif trim('  hello  ') != 'hello':
+    print('测试失败!')
+elif trim('  hello  world  ') != 'hello  world':
+    print('测试失败!')
+elif trim('') != '':
+    print('测试失败!')
+elif trim('    ') != '':
+    print('测试失败!')
+else:
+    print('测试成功!')
